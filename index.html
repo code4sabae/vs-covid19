@@ -3,7 +3,7 @@
 <link rel="apple-touch-icon" href="vscovid19.png"/>
 <meta property="og:image" content="vscovid19.png"/>
 <meta name="format-detection" content="telephone=no"/>
-<title>VS COVID-19 企業による支援リスト</title>
+<title>VS COVID-19 企業/NPOによる支援リスト</title>
 <script src="https://fukuno.jig.jp/fukuno2.js"></script>
 <script>"use strict"
 const fetchGoogleSpreadSheet2 = async function(key) {
@@ -14,9 +14,13 @@ const fetchGoogleSpreadSheet2 = async function(key) {
 	return csv2json(data)
 }
 window.onload = async function() {
-	const key = '2PACX-1vSFMNp5HcRNOF5MrAujEUWR1dIoX2mncMEWTbPlVAaJqKWiq831-6gnCyI7n_G8YfPqNQXrfwyVjyHL'
-	const data = await fetchGoogleSpreadSheet2(key)
+	const key1 = '2PACX-1vSFMNp5HcRNOF5MrAujEUWR1dIoX2mncMEWTbPlVAaJqKWiq831-6gnCyI7n_G8YfPqNQXrfwyVjyHL'
+	const data1 = await fetchGoogleSpreadSheet2(key1)
 //	console.log(data[0])
+	const key2 = '2PACX-1vSB9TX_MIA7mrLUkd1JkcrSY4P5Q7AiY6r1sPjkvukrNYsoFZNdfFmFq_hxuFloFgOfqTUnDPjIPDzK'
+	const data2 = await fetchGoogleSpreadSheet2(key2)
+
+	const data = data1.concat(data2)
 
 	const items = []
 	let bkkey = null
@@ -177,15 +181,16 @@ a {
 </head>
 <body>
 
-<h1 id=title>VS COVID-19<br>企業による支援リスト</h1>
+<h1 id=title>VS COVID-19<br>企業/NPOによる支援リスト</h1>
 <div class="searchboxid">
 <input type=text id=searchbox placeholder="フィルター"><button id=btnclear>クリア</button>
 </div>
 <div id="main"></div>
 
 <div id="src">
-DATA: CC BY Code for Japan <a href=https://docs.google.com/spreadsheets/d/1IiHUk3D_b6e5BfqFG3ZBxQ8X-QVACdY7CeQeG6C7S1w/edit#gid=0>企業などによる支援一覧</a> *提供されているサービスを公開資料を基に整理したものであり、支援サービスをすべて網羅しているわけではありません。また、空欄は公開情報に明確に情報が記載されていないため空欄にしており、その内容がないというわけではありません。またサービスの問い合わせ等は直接支援企業にお問い合わせ下さい。<br>
-APP： CC BY Code for Japan, <a href=https://github.com/codeforjapan/supportmenu-vs-covid19>src on GitHub</a> (<a href='https://fukuno.jig.jp/'>@taisukef</a>)<br>
+DATA: CC0 日本政府 <a href=https://docs.google.com/spreadsheets/d/1IiHUk3D_b6e5BfqFG3ZBxQ8X-QVACdY7CeQeG6C7S1w/edit#gid=0>企業などによる支援一覧</a> *提供されているサービスを公開資料を基に整理したものであり、支援サービスをすべて網羅しているわけではありません。また、空欄は公開情報に明確に情報が記載されていないため空欄にしており、その内容がないというわけではありません。またサービスの問い合わせ等は直接支援企業にお問い合わせ下さい。<br>
+DATA: CC0 企業やNPOによる支援一覧 by <a href=https://www.code4japan.org/>Code for Japan</a><br>
+APP： CC BY Code for Japan, <a href=https://github.com/code4sabae/vs-covid19>src on GitHub</a> (<a href='https://fukuno.jig.jp/'>@taisukef</a>) forked from <a href=https://github.com/codeforjapan/vs-covid19/>VS COVID-19</a><br>
 CHAR: CC BY <a href=https://twitter.com/inuno__ke>Shimoken</a><br>
 </div>
 
