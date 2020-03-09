@@ -21,6 +21,7 @@ window.onload = async function() {
 	const data2 = await fetchGoogleSpreadSheet2(key2)
 
 	const data = data1.concat(data2)
+	shuffle(data)
 
 	const items = []
 	let bkkey = null
