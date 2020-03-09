@@ -1,6 +1,6 @@
 # VS COVID-19 企業による支援リスト  
 https://code4sabae.github.io/vs-covid19/  
-<img src=https://code4sabae.github.io/vs-covid19/supportmenu.png style='width:100%'>  
+<img src=https://code4sabae.github.io/vs-covid19/vscovid19.png style='width:100%'>  
 
 
 DATA: CC BY Code for Japan 企業などによる支援一覧  
